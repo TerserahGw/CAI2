@@ -6,7 +6,11 @@ token = None
 
 def get_client():
     return PyCAI(token)
-
+    
+@app.route('/')
+def index():
+    return ''
+    
 @app.route('/newchat')
 def new_chat():
     global token
