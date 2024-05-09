@@ -6,7 +6,7 @@
         <title>KeiLa API - For Any</title>
         <link
             rel="icon"
-            href="https://cdn.discordapp.com/attachments/1214367379883298868/1222199626208383108/apple-touch-icon.png?ex=6615591a&is=6602e41a&hm=9ebb8117fcc8022df02e7a378881786a3af164cd8abdb180e8e8b0b73fb9db1c&"
+            href="https://telegra.ph/file/065cf5b63759ff20033ac.jpg"
         />
         <link
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -17,11 +17,12 @@
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
-                background-image: url("https://cdn.discordapp.com/attachments/1214367379883298868/1222199625822376037/wallpaperflare.com_wallpaper.jpg?ex=6615591a&is=6602e41a&hm=75c1a96e5690619cfb56fbee32e3e16fc712e8efd77ded01e360cc6a254b8d4a&");
+                /* Hapus URL latar belakang */
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-position: center;
+                transition: background-image 0.5s ease;
             }
 
             .sidebar {
@@ -329,6 +330,12 @@
                                <a href="/api/rec">Coba Sekarang</a>
                            </div>
                            <div class="container-item">
+                               <h3>Buat Character AI</h3>
+                               <p>Membuat Char Anda Sendiri.</p>
+                               <a href="/api/create?name=&greeting=&identifier=">Coba Sekarang</a>
+                               <p><strong>Parameter Variable:</strong> name, greeting, identifier</p>
+                           </div>
+                           <div class="container-item">
                                <h3>Obrolan dengan Character AI</h3>
                                <p>Terlibat dalam percakapan dengan karakter AI.</p>
                                <a href="/api/cai?charid=&message=">Coba Sekarang</a>
@@ -426,6 +433,27 @@
             document.addEventListener("DOMContentLoaded", function () {
                 changeContent("Dashboard");
             });
+
+            function changeBackground() {
+                var body = document.querySelector("body");
+                var windowHeight = window.innerHeight;
+                var windowWidth = window.innerWidth;
+
+                // Define the URLs for background images
+                var backgroundImage1 = "https://telegra.ph/file/90688010dd8787ab7bd69.jpg"; // URL for background image when height is greater than width
+                var backgroundImage2 = "https://telegra.ph/file/8b789048b02eeb7ca1df8.jpg"; // URL for background image when width is greater than height
+
+                // Check if height is greater than width
+                if (windowHeight > windowWidth) {
+                    body.style.backgroundImage = "url('" + backgroundImage1 + "')";
+                } else {
+                    body.style.backgroundImage = "url('" + backgroundImage2 + "')";
+                }
+            }
+
+            // Call the function when the page loads and when the window is resized
+            window.onload = changeBackground;
+            window.onresize = changeBackground;
         </script>
     </body>
 </html>
