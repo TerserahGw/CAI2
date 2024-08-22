@@ -84,6 +84,7 @@ def cai_chat():
     client = PyCAI(token_main)
     char_id = request.args.get('charid', '')
     message = request.args.get('message', '')
+    custom_id = request.args.get('id', '')  # Mengambil id dari request
 
     if not char_id:
         return jsonify({'error': 'Character ID is required'}), 400
@@ -98,7 +99,10 @@ def cai_chat():
     else:
         tgt = participants[1]['user']['username']
 
-    data = client.chat.send_message(chat['external_id'], tgt, message)
+    # Jika id tidak disediakan, gunakan external_id dari chat
+    id_to_use = custom_id or chat['external_id']
+
+    data = client.chat.send_message(id_to_use, tgt, message)
 
     name = data['src_char']['participant']['name']
     text = data['replies'][0]['text']
