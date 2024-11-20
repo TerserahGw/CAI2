@@ -1,0 +1,388 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KeiLa - API</title>
+		<link
+			href="https://cdn.lineicons.com/4.0/lineicons.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="home.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<aside id="sidebar">
+				<div class="d-flex">
+					<button class="toggle-btn" type="button">
+						<i class="lni lni-grid-alt"></i>
+					</button>
+					<div class="sidebar-logo">
+						<a href="#">KeiLa</a>
+					</div>
+				</div>
+				<ul class="sidebar-nav">
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link">
+							<i class="lni lni-home"></i>
+							<span>Home</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link">
+							<i class="lni lni-user"></i>
+							<span>About</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a
+							href="#"
+							class="sidebar-link collapsed has-dropdown"
+							data-bs-toggle="collapse"
+							data-bs-target="#cai"
+							aria-expanded="false"
+							aria-controls="cai"
+						>
+							<i class="lni lni-list"></i>
+							<span>CAI Api</span>
+						</a>
+						<ul
+							id="cai"
+							class="sidebar-dropdown list-unstyled collapse"
+							data-bs-parent="#sidebar"
+						>
+							<li class="sidebar-item">
+								<a href="/api/search?q=" class="sidebar-link"
+									>Search</a
+								>
+							</li>
+							<li class="sidebar-item">
+								<a href="/api/tren" class="sidebar-link"
+									>Trending</a
+								>
+							</li>
+							<li class="sidebar-item">
+								<a href="/api/rec?q=" class="sidebar-link"
+									>Recomended</a
+								>
+							</li>
+							<li class="sidebar-item">
+								<a href="/api/info?id=" class="sidebar-link"
+									>Info</a
+								>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="/api/newchat?charid="
+									class="sidebar-link"
+									>Newchat</a
+								>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="/api/cai?charid=&message=&id"
+									class="sidebar-link"
+									>Chat AI</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a
+							href="#"
+							class="sidebar-link collapsed has-dropdown"
+							data-bs-toggle="collapse"
+							data-bs-target="#other"
+							aria-expanded="false"
+							aria-controls="other"
+						>
+							<i class="lni lni-more"></i>
+							<span>Other Api</span>
+						</a>
+						<ul
+							id="other"
+							class="sidebar-dropdown list-unstyled collapse"
+							data-bs-parent="#sidebar"
+						>
+							<li class="sidebar-item">
+								<a
+									href="#"
+									class="sidebar-link collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#other-yt"
+									aria-expanded="false"
+									aria-controls="other-yt"
+								>
+									Youtube
+								</a>
+								<ul
+									id="other-yt"
+									class="sidebar-dropdown list-unstyled collapse"
+								>
+									<li class="sidebar-item">
+										<a
+											href="https://keila-api.vercel.app/youtube?q="
+											class="sidebar-link"
+											>Ytdl</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Ytmp3</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Ytmp4</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a
+											href="https://keila-api.vercel.app/play?q="
+											class="sidebar-link"
+											>Yt Play</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="#"
+									class="sidebar-link collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#other-tt"
+									aria-expanded="false"
+									aria-controls="other-tt"
+								>
+									Tiktok
+								</a>
+								<ul
+									id="other-tt"
+									class="sidebar-dropdown list-unstyled collapse"
+								>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>TiktokDl</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Tiktok Mp3</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Tiktok Mp4</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Tiktok Search</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="#"
+									class="sidebar-link collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#other-mother"
+									aria-expanded="false"
+									aria-controls="other-mother"
+								>
+									Media Downloader
+								</a>
+								<ul
+									id="other-mother"
+									class="sidebar-dropdown list-unstyled collapse"
+								>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Instagram</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Facebook</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Twiter/X</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="#"
+									class="sidebar-link collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#other-anim"
+									aria-expanded="false"
+									aria-controls="other-anim"
+								>
+									Anime
+								</a>
+								<ul
+									id="other-anim"
+									class="sidebar-dropdown list-unstyled collapse"
+								>
+									<li class="sidebar-item">
+										<a
+											href="https://keilapixiv.vercel.app/search?q="
+											class="sidebar-link"
+											>Pixiv - SFW</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Pixiv - NSFW</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Pinterest</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Waifu</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Husbu</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Anime Search</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Manga Search</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a
+											href="https://keilapixiv.vercel.app/getpixiv?id="
+											class="sidebar-link"
+											>Pixiv Get - SFW</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Nhentai - NSFW</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li class="sidebar-item">
+								<a
+									href="#"
+									class="sidebar-link collapsed"
+									data-bs-toggle="collapse"
+									data-bs-target="#other-other"
+									aria-expanded="false"
+									aria-controls="other-other"
+								>
+									Other
+								</a>
+								<ul
+									id="other-other"
+									class="sidebar-dropdown list-unstyled collapse"
+								>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Remini</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>To Anime</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Diffusion</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Gpt AI</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Info Gempa</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Jarak</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Quiz</a
+										>
+									</li>
+									<li class="sidebar-item">
+										<a href="#" class="sidebar-link"
+											>Quiz Math</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link">
+							<i class="lni lni-download"></i>
+							<span>Free SC</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a href="#" class="sidebar-link">
+							<i class="lni lni-cog"></i>
+							<span>Setting</span>
+						</a>
+					</li>
+				</ul>
+				<div class="sidebar-footer">
+					<a href="/api" class="sidebar-link">
+						<i class="lni lni-arrow-left"></i>
+						<span>Back To Old Style</span>
+					</a>
+				</div>
+			</aside>
+			<div class="main p-3">
+				<div class="text-center">
+					<h1>KeiLa Api - Home</h1>
+					<a
+						>Maaf Jika Tampilan Nya Jelek Karna Saya Tidak Bisa HTML
+						Ya!</a
+					>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"
+		></script>
+		<script src="home.js"></script>
+	</body>
+</html>
